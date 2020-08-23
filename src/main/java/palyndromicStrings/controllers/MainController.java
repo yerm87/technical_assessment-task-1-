@@ -23,9 +23,20 @@ public class MainController {
 
     @GetMapping("/")
     public String formWithString(Model model){
-        StringEntity se = repo.findById(0).get();
-        String palyndromicString = se.getPalyndromicString();
-        model.addAttribute("name", palyndromicString);
+        boolean boolVal = repo.findById(1).isPresent();
+        StringEntity se = null;
+
+        if(!boolVal){
+            se = new StringEntity();
+            se.setPalyndromicString("");
+            repo.save(se);
+            model.addAttribute("name", "");
+        } else {
+            se = repo.findById(1).get();
+            String palyndromicString = se.getPalyndromicString();
+            model.addAttribute("name", palyndromicString);
+        }
+
         return "form";
     }
 

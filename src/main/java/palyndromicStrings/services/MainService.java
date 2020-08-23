@@ -51,7 +51,7 @@ public class MainService {
                 }
             }
         }
-        StringEntity se = repo.findById(0).get();
+        StringEntity se = repo.findById(1).get();
         se.setPalyndromicString(palindromicString);
         repo.save(se);
 

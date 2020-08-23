@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="strings")
+@Table(name="palyndromics")
 public class StringEntity {
 
     @Id
