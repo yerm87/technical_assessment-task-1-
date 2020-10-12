@@ -53,4 +53,12 @@ public class MainControllerTest {
         String resultString = service.createPalyndromicString(testString);
         Assert.assertEquals("iutg", resultString);
     }
+
+    @Test
+    public void testCalc(){
+        int x = 4;
+        int y = 2;
+        int z = x + y;
+        Assert.assertEquals(6, z);
+    }
 }
